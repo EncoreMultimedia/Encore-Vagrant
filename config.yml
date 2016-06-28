@@ -34,6 +34,7 @@ vagrant_synced_folders:
   - local_path: ../public_html/sites/default
     destination: /var/www/drupal/sites/default
     create: true
+    mount_options: ["dmode=777,fmode=666"]
   - local_path: ../public_html/sql
     destination: /var/www/drupal/sql
     create: true
@@ -48,6 +49,8 @@ drupalvm_webserver: apache
 # Set this to true if you would like to import a drupal installation from a git
 # repository.
 drupal_import_from_git: true
+# If using a private repo, create a Personal Access Token and prepend it to the repo URL
+# Example: https://<token>:x-oauth-basic@github.com/EncoreMultimedia/core-drupal.git
 drupal_import_git_url: "https://github.com/EncoreMultimedia/core-drupal.git"
 # Set this to true if you would like to import a drupal database from the git
 # repository.
